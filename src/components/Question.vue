@@ -87,11 +87,15 @@
         <h2 v-show="domandaCorrente != domande.length">
           Ti sei fermato alla domanda {{ domandaCorrente + 1 }}
         </h2>
-        <div style="margin-bottom: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;" v-show="domandaCorrente == domande.length">
-          <h2 style="text-align: center; font-size: 40px; color: gold;">Complimenti!</h2>
-          <img style="width: 150px;" src="../assets/money-cash.gif" alt="" />
+        <div class="custom" v-show="domandaCorrente == domande.length">
+          <h2 style="text-align: center; font-size: 40px; color: gold">
+            Complimenti!
+          </h2>
+          <img style="width: 150px" src="../assets/money-cash.gif" alt="" />
         </div>
-        <h5 :class="{ 'm-top' : domandaCorrente < domande.length }">Torni a casa con</h5>
+        <h5 :class="{ 'm-top': domandaCorrente < domande.length }">
+          Torni a casa con
+        </h5>
         <h2 style="color: gold; font-size: 3rem">
           {{ finalPrice | toCurrency }}
         </h2>
@@ -343,7 +347,6 @@ export default {
   }
 }
 
-
 .m-top {
   margin-top: 20px;
 }
@@ -406,5 +409,13 @@ export default {
     color: #fff;
     border-color: gold;
   }
+}
+
+.custom {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>
