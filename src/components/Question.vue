@@ -42,7 +42,7 @@
           <span>50 : 50</span>
         </button>
         <div class="title" v-show="title">
-          <p>Puoi usarlo una sola volta, Scegli con cura!</p>
+          <p>Puoi usarlo una sola volta, scegli con cura!</p>
         </div>
         <div
           v-show="
@@ -70,13 +70,18 @@
       </div>
 
       <div class="ladder">
-        <h6
-          :class="{ gold: domandaCorrente == index }"
-          v-for="(price, index) in gift"
-          :key="index"
-        >
-          {{ price | toCurrency }}
-        </h6>
+        
+          
+          <h6
+            :class="{ gold: domandaCorrente == index }"
+            v-for="(price, index) in gift"
+            :key="index"
+            style="position: relative;"
+          >
+            <span style="color: gold; position: absolute; left: -20px;">{{index+1}}</span>
+            {{ price | toCurrency }}
+          </h6>
+        
       </div>
     </div>
     <div v-else-if="finish || domandaCorrente == domande.length">
@@ -357,7 +362,7 @@ export default {
 }
 .ladder {
   position: absolute;
-  left: 10px;
+  left: 30px;
   top: 50%;
   transform: translateY(-50%);
 
